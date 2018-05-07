@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/amount_et"
+        android:hint="@string/amount_hint"
+        android:layout_margin="20dp"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        style="@style/TextAppearance.AppCompat.Display1"
+        android:lines="1"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sales_continue_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:text="@string/pay"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"/>
+
+</RelativeLayout>

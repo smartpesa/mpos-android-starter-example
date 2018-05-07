@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="SmartPesaTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="SmartPesaTheme" parent="SmartPesaTheme.Base">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="ThemeOverlay.AppCompat.Dark.ActionBar.SmartPesa" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="SmartPesa.Base.ActionBar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar.SmartPesa</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <style name="SmartPesa.ActionBar" parent="SmartPesa.Base.ActionBar">
+        <item name="elevation">4dp</item>
+    </style>
+
+</resources>
