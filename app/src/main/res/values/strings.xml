@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SmartPesa Demo</string>
+    <string name="app_name">SmartPesa Starter</string>
     <string name="title_sales">Sales</string>
     <string name="amount_hint">Enter amount</string>
     <string name="pay">PAY</string>
