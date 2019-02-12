@@ -66,5 +66,7 @@ public void onCreate(){
 Please follow our confluence documentation for the process of authentication, logging in and performing transaction.
 https://smartpesa.atlassian.net/wiki/spaces/SPD/pages/51090535/Getting+Started+With+Android
 
+We also have a demo app which covers most functions of SmartPesa SDK such as perform transaction, print receipt, send notification, qr payments and much more. Please check it here https://github.com/smartpesa/mpos-smartpesa-demo-app
+
 You can email your request for login credentials or any queries to support@smartpesa.com
 
