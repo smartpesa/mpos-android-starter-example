@@ -1,12 +1,5 @@
 package com.smartpesa.smartpesademo.activities;
 
-import com.mikepenz.materialdrawer.Drawer;
-import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-import com.smartpesa.smartpesademo.R;
-import com.smartpesa.smartpesademo.fragments.SaleFragment;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,10 +9,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.smartpesa.smartpesademo.R;
+import com.smartpesa.smartpesademo.fragments.SaleFragment;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import smartpesa.sdk.ServiceManager;
-import smartpesa.sdk.error.SpException;
+import smartpesa.sdk.core.error.SpException;
 import smartpesa.sdk.models.operator.LogoutCallback;
 
 public class MainActivity extends AppCompatActivity {
@@ -106,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onError(SpException exception) {
-                //implement error while logout here
 
             }
 

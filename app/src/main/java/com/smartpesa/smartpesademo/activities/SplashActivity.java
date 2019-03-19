@@ -1,7 +1,5 @@
 package com.smartpesa.smartpesademo.activities;
 
-import com.smartpesa.smartpesademo.R;
-
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,13 +15,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.smartpesa.smartpesademo.R;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import okhttp3.HttpUrl;
 import smartpesa.sdk.ServiceManager;
 import smartpesa.sdk.ServiceManagerConfig;
-import smartpesa.sdk.error.SpException;
+import smartpesa.sdk.core.error.SpException;
 import smartpesa.sdk.models.version.GetVersionCallback;
 import smartpesa.sdk.models.version.Version;
+import smartpesa.sdk.network.NetworkSettings;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -38,12 +41,22 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
 
-        //initialise SmartPesa ServiceManager
-        ServiceManagerConfig config = ServiceManagerConfig.newBuilder(getApplicationContext())
-                .endPoint("demo.smartpesa.com")
-                .withoutSsl()
+
+        ServiceManagerConfig config = new ServiceManagerConfig.Builder(getApplicationContext())
+                .networkSettings(new NetworkSettings.Builder()
+                        .url(new HttpUrl.Builder()
+                                .host("demo.smartpesa.com")
+                                .scheme("http")
+                                .build())
+                        .build())
                 .build();
-        ServiceManager.init(config);
+
+
+        try {
+            ServiceManager.init(config);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         //use this to get serviceManager instance anywhere
         mServiceManager = ServiceManager.get(SplashActivity.this);

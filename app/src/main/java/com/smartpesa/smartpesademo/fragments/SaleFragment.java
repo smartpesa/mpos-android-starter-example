@@ -1,8 +1,5 @@
 package com.smartpesa.smartpesademo.fragments;
 
-import com.smartpesa.smartpesademo.R;
-import com.smartpesa.smartpesademo.activities.PaymentProgressActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +11,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.smartpesa.smartpesademo.R;
+import com.smartpesa.smartpesademo.activities.PaymentProgressActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
