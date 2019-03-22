@@ -32,7 +32,7 @@ dependencies {
     compile('com.mikepenz:materialdrawer:5.0.0@aar') {
         transitive = true
     }
-    compile('com.smartpesa:sdk:4.0.0-SNAPSHOT-25') {
+    compile('com.smartpesa:sdk:4.0.0-SNAPSHOT-28') {
         transitive = true
         changing = true
     }
