@@ -44,7 +44,7 @@ public class SplashActivity extends AppCompatActivity {
         ServiceManagerConfig config = new ServiceManagerConfig.Builder(getApplicationContext())
                 .networkSettings(new NetworkSettings.Builder()
                         .url(new HttpUrl.Builder()
-                                .host("demo.smartpesa.com")
+                                .host("dev.smartpesa.com")
                                 .scheme("http")
                                 .build())
                         .build())
