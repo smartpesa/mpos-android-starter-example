@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.smartpesa.smartpesademo.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import smartpesa.sdk.ServiceManager;
 import smartpesa.sdk.core.error.SpException;
@@ -22,10 +22,10 @@ import smartpesa.sdk.models.merchant.VerifyMerchantCallback;
 
 public class LoginActivity extends AppCompatActivity {
 
-    @Bind(R.id.merchant_code_et) EditText mMerchantCodeEt;
-    @Bind(R.id.operator_code_et) EditText mOperatorCodeEt;
-    @Bind(R.id.operator_pin_et) EditText mOperatorPinEt;
-    @Bind(R.id.login_btn) Button loginBtn;
+    @BindView(R.id.merchant_code_et) EditText mMerchantCodeEt;
+    @BindView(R.id.operator_code_et) EditText mOperatorCodeEt;
+    @BindView(R.id.operator_pin_et) EditText mOperatorPinEt;
+    @BindView(R.id.login_btn) Button loginBtn;
     ServiceManager mServiceManager;
 
     @Override

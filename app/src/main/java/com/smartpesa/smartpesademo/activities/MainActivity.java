@@ -16,7 +16,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.smartpesa.smartpesademo.R;
 import com.smartpesa.smartpesademo.fragments.SaleFragment;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import smartpesa.sdk.ServiceManager;
 import smartpesa.sdk.core.error.SpException;
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final long MENU_LOGOUT = 2;
     private static final long MENU_SALE = 1;
-    @Bind(R.id.toolbar) Toolbar mToolbar;
+    @BindView(R.id.toolbar) Toolbar mToolbar;
 
     Drawer drawer;
     ServiceManager mServiceManager;

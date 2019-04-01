@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.smartpesa.smartpesademo.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.HttpUrl;
 import smartpesa.sdk.ServiceManager;
@@ -30,8 +30,8 @@ import smartpesa.sdk.network.NetworkSettings;
 
 public class SplashActivity extends AppCompatActivity {
 
-    @Bind(R.id.progress_tv) TextView progressTv;
-    @Bind(R.id.splash_pb) ProgressBar mProgressBar;
+    @BindView(R.id.progress_tv) TextView progressTv;
+    @BindView(R.id.splash_pb) ProgressBar mProgressBar;
     ServiceManager mServiceManager;
     private static final int REQUEST_PERMISSION = 232;
 
@@ -41,7 +41,6 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
 
-
         ServiceManagerConfig config = new ServiceManagerConfig.Builder(getApplicationContext())
                 .networkSettings(new NetworkSettings.Builder()
                         .url(new HttpUrl.Builder()
@@ -50,7 +49,6 @@ public class SplashActivity extends AppCompatActivity {
                                 .build())
                         .build())
                 .build();
-
 
         try {
             ServiceManager.init(config);

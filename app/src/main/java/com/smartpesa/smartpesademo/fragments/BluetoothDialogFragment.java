@@ -22,15 +22,15 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import smartpesa.sdk.devices.SpDevice;
 
 public class BluetoothDialogFragment<T extends SpDevice> extends BaseDialogFragment {
 
-    @Bind(R.id.cancel_btn) Button cancelBtn;
-    @Bind(R.id.bluetooth_device_hint) TextView btSelectionHint;
-    @Bind(R.id.list) ListView list;
+    @BindView(R.id.cancel_btn) Button cancelBtn;
+    @BindView(R.id.bluetooth_device_hint) TextView btSelectionHint;
+    @BindView(R.id.list) ListView list;
     protected DeviceSelectedListener<T> mListener;
     protected BluetoothAdapter<T> adapter;
     protected List<T> data = new ArrayList<>();

@@ -15,7 +15,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import smartpesa.sdk.ServiceManager;
 import smartpesa.sdk.SmartPesa;
@@ -39,8 +39,8 @@ public class PaymentProgressActivity extends AppCompatActivity {
     public static final String KEY_AMOUNT = "amount";
     private static final String BLUETOOTH_FRAGMENT_TAG = "bluetooth";
 
-    @Bind(R.id.amount_tv) TextView amountTv;
-    @Bind(R.id.progress_tv) TextView progressTv;
+    @BindView(R.id.amount_tv) TextView amountTv;
+    @BindView(R.id.progress_tv) TextView progressTv;
     double amount;
     ServiceManager mServiceManager;
 

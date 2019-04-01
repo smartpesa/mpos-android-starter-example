@@ -15,13 +15,13 @@ import android.widget.Toast;
 import com.smartpesa.smartpesademo.R;
 import com.smartpesa.smartpesademo.activities.PaymentProgressActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SaleFragment extends Fragment {
 
-    @Bind(R.id.sales_continue_btn) Button payBtn;
-    @Bind(R.id.amount_et) EditText amountEt;
+    @BindView(R.id.sales_continue_btn) Button payBtn;
+    @BindView(R.id.amount_et) EditText amountEt;
 
     public static SaleFragment newInstance(){
         return new SaleFragment();
