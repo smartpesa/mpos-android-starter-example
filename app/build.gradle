@@ -21,16 +21,6 @@ android {
     repositories {
         maven { url "https://jitpack.io" }
         maven {
-            url "https://bitbucket.org/smartpesa/smartpesa-maven/raw/master"
-            credentials {
-                username "YOUR_BITBUCKET_USERNAME"
-                password "YOUR_BITBUCKET_PASSWORD"
-            }
-            authentication{
-                basic(BasicAuthentication)
-            }
-        }
-        maven {
             url "https://bitbucket.org/smartpesa/maven/raw/master"
             credentials {
                 username "YOUR_BITBUCKET_USERNAME"
@@ -41,7 +31,11 @@ android {
             }
         }
     }
+}
 
+configurations.all {
+    // check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
 
 dependencies {
@@ -55,7 +49,7 @@ dependencies {
     implementation('com.mikepenz:materialdrawer:5.0.0@aar') {
         transitive = true
     }
-    implementation ('com.smartpesa:sdk:4.0.1.2') {
+    implementation ('com.smartpesa:sdk:4.0.1.4') {
         transitive = true
         changing = true
     }
