@@ -6,7 +6,7 @@ This guide will teach you how you can use SmartPesa SDK in order to perform a tr
 
 ### Declare SmartPesa hosted repository
 
-In build.gradle file **(app/build.gradle line-23)** add custom repository to point to SmartPesa’s SDK Maven repository.
+In build.gradle file [app/build.gradle line-23](https://github.com/smartpesa/mpos-android-starter-example/blob/master/app/build.gradle#L23) add custom repository to point to SmartPesa’s SDK Maven repository.
 SmartPesa will provide the repository URL to customers and their 3rd parties to retrieve .aar upon request
 
 ### Add SmartPesa SDK dependency
@@ -25,7 +25,7 @@ Service Manager is the main class which you will use to communicate with SmartPe
 
 ### Initializing Service Manager
 
-Initialize the SmartPesa SDK as shown in **SplashActivity.java line-44**
+Initialize the SmartPesa SDK as shown in [SplashActivity.java line-4](https://github.com/smartpesa/mpos-android-starter-example/blob/363f1a03a2f3d927485f99607722956ef2cc02c2/app/src/main/java/com/smartpesa/smartpesademo/activities/SplashActivity.java#L44)
 Client specific host endpoint will be provided by SmartPesa on request.
 
 # Authentication
@@ -36,14 +36,14 @@ Authentication is a process for verifying a merchant’s identity. In its simple
 
 SmartPesa SDK uses session management for security and to validate access to the platform. SmartPesa SDK uses session management for security and to validate access to the platform. Session must be established before you are able to access functions of SmartPesa SDK. This session will expire after 24 hours of inactivity. To instantiate/ renew the session. You need to invoke getVersion method of the ServiceManager class.
 
-> To initiate the session, you can follow code example in **SplashActivity.java line-71**
+To initiate the session, you can follow code example in [SplashActivity.java line-71](https://github.com/smartpesa/mpos-android-starter-example/blob/363f1a03a2f3d927485f99607722956ef2cc02c2/app/src/main/java/com/smartpesa/smartpesademo/activities/SplashActivity.java#L71)
 
 ### Logging In
 
 MerchantCode, OperatorCode and OperatorPin combinations are matched against the server. If the three parameters match with the server's data, then the Merchant is allowed to perform transactions and other features of SmartPesa SDK.
 SmartPesa will provide MerchantCode, OperatorCode and OperatorPin for your host upon request.
 
-> To initiate the login using SDK, you can follow code example in **LoginActivity.java line-64**
+To initiate the login using SDK, you can follow code example in [LoginActivity.java line-64](https://github.com/smartpesa/mpos-android-starter-example/blob/363f1a03a2f3d927485f99607722956ef2cc02c2/app/src/main/java/com/smartpesa/smartpesademo/activities/LoginActivity.java#L64)
 
 # SoftPOS
 
@@ -52,13 +52,13 @@ To transact with a SoftPOS device, you will have to register and activate your d
 
 ### Register SoftPOS
 
-> To register device, you can follow code example in **SaleFragment.java line-82**
+To register device, you can follow code example in [SaleFragment.java line-82](https://github.com/smartpesa/mpos-android-starter-example/blob/363f1a03a2f3d927485f99607722956ef2cc02c2/app/src/main/java/com/smartpesa/smartpesademo/fragments/SaleFragment.java#L82)
 
 ### Activate SoftPOS
 
 Upon registering SoftPOS, you will receive an OTP to the registered mobile number of the operator you are using to login to the application. You will need to pass the OTP into the activate method to activate the SoftPOS device.
 
-> To activate device, you can follow code example in **SaleFragment.java line-103**
+To activate device, you can follow code example in [SaleFragment.java line-103](https://github.com/smartpesa/mpos-android-starter-example/blob/363f1a03a2f3d927485f99607722956ef2cc02c2/app/src/main/java/com/smartpesa/smartpesademo/fragments/SaleFragment.java#L103)
 
 # Transaction
 
@@ -66,19 +66,19 @@ Upon registering SoftPOS, you will receive an OTP to the registered mobile numbe
 
 Before starting a transaction you should start to scan for the available SoftPOS and bluetooth mPOS devices.
 
-> To perform Scan Terminal, you can follow code example in **PaymentProgressActivity.java line-60**
+To perform Scan Terminal, you can follow code example in [PaymentProgressActivity.java line-60](https://github.com/smartpesa/mpos-android-starter-example/blob/363f1a03a2f3d927485f99607722956ef2cc02c2/app/src/main/java/com/smartpesa/smartpesademo/activities/PaymentProgressActivity.java#L60)
 
 ### Initializing Transaction
 
 After the device is selected, you need to setup the Transaction parameters. This could be done by using SmartPesa.TranscationParam.Builder class. This class provides a logical way to provide the parameters to your transaction and ensures that all the required parameters are set and validated.
 
-> To initialise transaction, you can follow code example in **PaymentProgressActivity.java line-95**
+To initialise transaction, you can follow code example in [PaymentProgressActivity.java line-95](https://github.com/smartpesa/mpos-android-starter-example/blob/363f1a03a2f3d927485f99607722956ef2cc02c2/app/src/main/java/com/smartpesa/smartpesademo/activities/PaymentProgressActivity.java#L95)
 
 ### Perform Transaction
 
 In order to start a transaction, you need to call ServiceManager.performTransaction(TransactionParam param, TransactionCallback callback)
 
-> To perform transaction, you can follow code example in **PaymentProgressActivity.java line-109**
+To perform transaction, you can follow code example in [PaymentProgressActivity.java line-109](https://github.com/smartpesa/mpos-android-starter-example/blob/363f1a03a2f3d927485f99607722956ef2cc02c2/app/src/main/java/com/smartpesa/smartpesademo/activities/PaymentProgressActivity.java#L109)
 
 Please follow the callbacks and implement the user interface for your application as required.
 
