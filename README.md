@@ -25,7 +25,7 @@ Service Manager is the main class which you will use to communicate with SmartPe
 
 ### Initializing Service Manager
 
-Initialize the SmartPesa SDK as shown in [SplashActivity.java line-4](https://github.com/smartpesa/mpos-android-starter-example/blob/363f1a03a2f3d927485f99607722956ef2cc02c2/app/src/main/java/com/smartpesa/smartpesademo/activities/SplashActivity.java#L44)
+Initialize the SmartPesa SDK as shown in [SplashActivity.java line-4](https://github.com/smartpesa/mpos-android-starter-example/blob/363f1a03a2f3d927485f99607722956ef2cc02c2/app/src/main/java/com/smartpesa/smartpesademo/activities/SplashActivity.java#L44).
 Client specific host endpoint will be provided by SmartPesa on request.
 
 # Authentication
