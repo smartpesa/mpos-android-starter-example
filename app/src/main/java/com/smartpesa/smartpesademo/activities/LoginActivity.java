@@ -61,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setCancelable(false);
         progressDialog.show();
 
+//      *** initiate the login using SDK
         mServiceManager.verifyMerchant(merchantCode, operatorCode, operatorPin, new VerifyMerchantCallback() {
             @Override
             public void onSuccess(VerifiedMerchantInfo verifiedMerchantInfo) {

@@ -41,6 +41,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
 
+//      *** initialise ServiceManager...
         ServiceManagerConfig config = new ServiceManagerConfig.Builder(getApplicationContext())
                 .networkSettings(new NetworkSettings.Builder()
                         .url(new HttpUrl.Builder()
@@ -67,6 +68,7 @@ public class SplashActivity extends AppCompatActivity {
         mProgressBar.setVisibility(View.VISIBLE);
         progressTv.setText("Perform getVersion");
 
+//      *** initiate the session
         mServiceManager.getVersion(new GetVersionCallback() {
 
             public void onSuccess(Version version) {

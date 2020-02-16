@@ -57,7 +57,10 @@ public class PaymentProgressActivity extends AppCompatActivity {
         amountTv.setText("Amount: "+amount);
         progressTv.setText("Enabling blueetooth..");
 
-        //scan for bluetooth device
+//      *** scan for device
+//      In the onDeviceListRefresh you will get the devices which are in paired or in pairing mode.
+//      You can select the required SpTerminal for perform the transaction.
+//      Please handle UI for other callbacks as needed
         mServiceManager.scanTerminal(new TerminalScanningCallback() {
             @Override
             public void onDeviceListRefresh(Collection<SpTerminal> collection) {
@@ -89,6 +92,9 @@ public class PaymentProgressActivity extends AppCompatActivity {
 
     private void performPayment(SpTerminal spTerminal) {
 
+//      *** initialise transaction builder
+//      After the device is selected, you need to setup the Transaction parameters.
+//      This class provides a logical way to provide the parameters to your transaction and ensures that all the required parameters are set and validated.
         SmartPesa.TerminalTransactionParam.Builder builder = SmartPesa.TerminalTransactionParam.newBuilder(spTerminal)
                 .transactionType(TransactionType.InternalType.PAYMENT.getEnumId())
                 .amount(new BigDecimal(Double.valueOf(amount)))
@@ -99,16 +105,15 @@ public class PaymentProgressActivity extends AppCompatActivity {
 
         SmartPesa.TransactionParam param = builder.build();
 
+
+//      *** Perform Transaction
+//      Please handle UI for other callbacks as needed
         mServiceManager.performTransaction(param, new TransactionCallback() {
             @Override
             public void onProgressTextUpdate(String s) {
                 progressTv.setText(s);
             }
 
-            @Override
-            public void onTransactionFinished(TransactionType transactionType, boolean isSuccess, @Nullable Transaction transaction, @Nullable SmartPesa.Verification verification, @Nullable SpCardTransactionException exception) {
-
-            }
 
             @Override
             public void onTransactionApproved(TransactionData data) {

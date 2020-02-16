@@ -7,4 +7,7 @@
     <string name="terminal_selection_hint">Please select an outPOSt device based on its serial number and ensure it is turned on.</string>
     <string name="cancel">Cancel</string>
     <string name="bt_permission_denied">Bluetooth Permission denied</string>
+    <string name="registerSoftPOS">Register SoftPOS</string>
+    <string name="activateSoftPOS">Activate SoftPOS</string>
+    <string name="registering_device">Registering device</string>
 </resources>
