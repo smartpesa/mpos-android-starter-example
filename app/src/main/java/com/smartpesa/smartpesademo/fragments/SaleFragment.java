@@ -71,6 +71,12 @@ public class SaleFragment extends Fragment {
                 registerSoftPOS();
             }
         });
+        activateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activateDevice();
+            }
+        });
     }
 
     private void registerSoftPOS() {
