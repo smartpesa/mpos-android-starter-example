@@ -41,7 +41,6 @@
                         android:inputType="number"
                         android:lines="1"
                         android:hint="Merchant Code"
-                        android:maxLength="15"
                         android:nextFocusDown="@+id/operator_code_tv"
                         android:singleLine="true" />
                 </android.support.design.widget.TextInputLayout>
@@ -73,7 +72,6 @@
                             android:hint="Operator Code"
                             android:inputType="number"
                             android:lines="1"
-                            android:maxLength="3"
                             android:nextFocusDown="@+id/operator_pin_et"
                             android:singleLine="true" />
 
