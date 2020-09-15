@@ -20,6 +20,7 @@ import butterknife.ButterKnife;
 import smartpesa.sdk.ServiceManager;
 import smartpesa.sdk.SmartPesa;
 import smartpesa.sdk.core.error.SpException;
+import smartpesa.sdk.devices.SpNFCDevice;
 import smartpesa.sdk.devices.SpTerminal;
 import smartpesa.sdk.error.SpCardTransactionException;
 import smartpesa.sdk.error.SpTransactionException;
@@ -55,7 +56,7 @@ public class PaymentProgressActivity extends AppCompatActivity {
 
         amount = getIntent().getExtras().getDouble(KEY_AMOUNT);
         amountTv.setText("Amount: "+amount);
-        progressTv.setText("Enabling blueetooth..");
+        progressTv.setText("Starting transaction..");
 
 //      *** scan for device
 //      In the onDeviceListRefresh you will get the devices which are in paired or in pairing mode.
@@ -88,10 +89,15 @@ public class PaymentProgressActivity extends AppCompatActivity {
             }
 
         }, this);
+
+        //****IMPORTANT FOR SOFTPOS ONLY****
+        //if you are only using SoftPOS, you can skip/comment out the scanTerminal and directly start transaction by passing the below
+        //The scanTerminal() method will list both available Bluetooth mPOS devices and NFC devices to start the transaction.
+        // If you need to directly start a SoftPOS transaction, you can skip using the scanTerminal() method of the SmartPesa SDK and directly pass SpNFCDevice.getInstance() as the terminal into the TransactionBuilder.
+//        performPayment(SpNFCDevice.getInstance());
     }
 
     private void performPayment(SpTerminal spTerminal) {
-
 //      *** initialise transaction builder
 //      After the device is selected, you need to setup the Transaction parameters.
 //      This class provides a logical way to provide the parameters to your transaction and ensures that all the required parameters are set and validated.
@@ -104,7 +110,6 @@ public class PaymentProgressActivity extends AppCompatActivity {
                 .cashBack(BigDecimal.ZERO);
 
         SmartPesa.TransactionParam param = builder.build();
-
 
 //      *** Perform Transaction
 //      Please handle UI for other callbacks as needed
