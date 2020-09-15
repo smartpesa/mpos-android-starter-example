@@ -12,6 +12,7 @@ SmartPesa will provide the repository URL to customers and their 3rd parties to 
 ### Add SmartPesa SDK dependency
 
 Add SmartPesa dependency in the build.gradle file.
+Please check with SmartPesa representative for the latest SDK version to use.
 
 ```
 implementation ('com.smartpesa:sdk:4.0.0.80-BETA') {
