@@ -74,13 +74,13 @@ To perform Scan Terminal, you can follow code example in [PaymentProgressActivit
 
 After the device is selected, you need to setup the Transaction parameters. This could be done by using SmartPesa.TranscationParam.Builder class. This class provides a logical way to provide the parameters to your transaction and ensures that all the required parameters are set and validated.
 
-To initialise transaction, you can follow code example in [PaymentProgressActivity.java line-95](https://github.com/smartpesa/mpos-android-starter-example/blob/363f1a03a2f3d927485f99607722956ef2cc02c2/app/src/main/java/com/smartpesa/smartpesademo/activities/PaymentProgressActivity.java#L95)
+To initialise transaction, you can follow code example in [PaymentProgressActivity.java line-101](https://github.com/smartpesa/mpos-android-starter-example/blob/50e9b88dfa0be31843aaa9b6525c88a71cc240e5/app/src/main/java/com/smartpesa/smartpesademo/activities/PaymentProgressActivity.java#L101)
 
 ### Perform Transaction
 
 In order to start a transaction, you need to call ServiceManager.performTransaction(TransactionParam param, TransactionCallback callback)
 
-To perform transaction, you can follow code example in [PaymentProgressActivity.java line-109](https://github.com/smartpesa/mpos-android-starter-example/blob/363f1a03a2f3d927485f99607722956ef2cc02c2/app/src/main/java/com/smartpesa/smartpesademo/activities/PaymentProgressActivity.java#L109)
+To perform transaction, you can follow code example in [PaymentProgressActivity.java line-114](https://github.com/smartpesa/mpos-android-starter-example/blob/50e9b88dfa0be31843aaa9b6525c88a71cc240e5/app/src/main/java/com/smartpesa/smartpesademo/activities/PaymentProgressActivity.java#L114)
 
 Please follow the callbacks and implement the user interface for your application as required.
 
