@@ -65,6 +65,8 @@ To activate device, you can follow code example in [SaleFragment.java line-103](
 ### Scan Terminal
 
 Before starting a transaction you should start to scan for the available SoftPOS and bluetooth mPOS devices.
+The scanTerminal() method will list both available Bluetooth mPOS devices and NFC devices to start the transaction. 
+If you need to directly start a SoftPOS transaction, you can skip using the scanTerminal() method of the SmartPesa SDK and directly pass SpNFCDevice.getInstance() as the terminal into the TransactionBuilder.
 
 To perform Scan Terminal, you can follow code example in [PaymentProgressActivity.java line-60](https://github.com/smartpesa/mpos-android-starter-example/blob/363f1a03a2f3d927485f99607722956ef2cc02c2/app/src/main/java/com/smartpesa/smartpesademo/activities/PaymentProgressActivity.java#L60)
 
